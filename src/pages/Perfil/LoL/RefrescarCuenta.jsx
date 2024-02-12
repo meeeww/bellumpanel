@@ -11,9 +11,10 @@ export default function RefrescarCuenta(info) {
     const refreshCuenta = () => {
         toast.promise(() => new Promise((resolve, reject) => {
             getCuentaPorPUUID(info.cuenta.puuid_lol).then((cuentaLoL) => {
+
                 axios
                     .put(api.directorio + "cuentas", {
-                        id_usuario: info.usuario.info.id_usuario,
+                        id_usuario: info.cuenta.id_usuario,
                         id: info.cuenta.id_cuenta,
                         invocador: cuentaLoL.gameName,
                         tag: cuentaLoL.tagLine,

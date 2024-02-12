@@ -52,7 +52,7 @@ export default function Cuentas(usuario) {
                             </div>
                             <div className="flex gap-2">
                                 <RefrescarCuenta usuario={usuario.usuario} cuenta={cuenta} cambioDatos={usuario.cambioDatos} setCambioDatos={usuario.setCambioDatos} />
-                                <ModalCrearCuenta usuario={usuario.usuario} cuenta={cuenta} cambioDatos={usuario.cambioDatos} setCambioDatos={usuario.setCambioDatos} tipo={"cuentas_lol"}  modificarExistente />
+                                <ModalCrearCuenta usuario={usuario.usuario} cuenta={cuenta} cambioDatos={usuario.cambioDatos} setCambioDatos={usuario.setCambioDatos} tipo={"cuentas"}  modificarExistente />
                                 <ModalEliminarCuenta cuenta={cuenta} cambioDatos={usuario.cambioDatos} setCambioDatos={usuario.setCambioDatos} />
                             </div>
                         </div>

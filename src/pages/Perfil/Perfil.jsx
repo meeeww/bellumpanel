@@ -162,19 +162,19 @@ export default function Perfil() {
                             <p>{columna.name}</p>
                             <div className="flex justify-center items-center gap-4">
                               <ModalPerfil jugador={usuario} columna={columna} setCambioDatos={setCambio} cambioDatos={cambio} />
-                              <></>
                             </div>
                           </div>
                           <Divider className="my-2" />
                         </div>
                       );
-                    case "Rol":
+                    case "Permisos":
                       return (
                         <div key={columna.name}>
                           <div className="flex justify-between items-center">
                             <p>{columna.name}</p>
                             <div className="flex justify-center items-center gap-4">
                               <p className="font-[600] text-lg">{getPerms(usuario.info[columna.uid])}</p>
+                              {usuario.info.permisos > 2 ? (<ModalPerfil jugador={usuario} columna={columna} setCambioDatos={setCambio} cambioDatos={cambio} />) : (<></>)}
                             </div>
                           </div>
                           <Divider className="my-2" />
