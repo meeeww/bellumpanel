@@ -1,49 +1,90 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import Login from './pages/Login'
+import InicioSesion from './pages/InicioSesion.jsx'
+import Registro from './pages/Registro.jsx'
 
-import NoMatch from './pages/NoMatch'
+import Usuarios from "./pages/Usuarios.jsx"
+import Equipos from "./pages/Equipos.jsx"
 
-import './estilos/Dashboard.css'
-import './estilos/Inicio.css'
-import './estilos/Loader.css'
-import './estilos/Dialog.css'
-import DashboardAdmin from './pages/Dashboard/admin/DashboardAdmin'
-import DashboardUser from './pages/Dashboard/user/DashboardUser'
-import Calendario from './pages/Dashboard/admin/Calendario'
-import PanelNotas from './pages/Dashboard/user/PanelNotas'
+import Equipo from './pages/Individual/Equipo.jsx'
+import Usuario from './pages/Individual/Usuario.jsx'
 
+import Partidos from './pages/Partidos/Partidos.jsx'
+import Inhouses from './pages/Partidos/Inhouses.jsx'
+import Clasificacion from './pages/Partidos/Clasificacion.jsx'
+
+import Inhouse from './pages/Individual/Inhouse.jsx'
+import Partido from './pages/Individual/Partido.jsx'
+
+import Notificaciones from "./pages/Notificaciones.jsx"
+
+import Perfil from './pages/Perfil/Perfil.jsx'
+
+import './styles/Index.css'
 
 import {
   createBrowserRouter,
   RouterProvider,
-  Routes,
-  Route
 } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Perfil />,
   },
   {
-    path: "/inicio",
-    element: <DashboardAdmin />,
+    path: "/iniciosesion",
+    element: <InicioSesion />,
   },
   {
-    path: "/user",
-    element: <DashboardUser />,
+    path: "/registro",
+    element: <Registro />,
   },
   {
-    path: "/notas",
-    element: <PanelNotas />,
+    path: "/usuarios",
+    element: <Usuarios />,
   },
   {
-    path: "*",
-    element: <NoMatch />,
-  }
+    path: "/usuario",
+    element: <Usuario />,
+  },
+  {
+    path: "/equipos",
+    element: <Equipos />,
+  },
+  {
+    path: "/equipo",
+    element: <Equipo />,
+  },
+  {
+    path: "/partidos",
+    element: <Partidos />,
+  },
+  {
+    path: "/partido",
+    element: <Partido />,
+  },
+  {
+    path: "/inhouses",
+    element: <Inhouses />,
+  },
+  {
+    path: "/inhouse",
+    element: <Inhouse />,
+  },
+  {
+    path: "/clasificacion",
+    element: <Clasificacion />,
+  },
+  {
+    path: "/notificaciones",
+    element: <Notificaciones />,
+  },
+  {
+    path: "/perfil",
+    element: <Perfil />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

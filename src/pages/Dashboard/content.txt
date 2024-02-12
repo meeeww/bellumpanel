@@ -1,8 +1,0 @@
--Calendario
--Elo principio / final
--Clases compradas
--Clases restantes
--Dashboard creadores (dinero generado con el codigo)
--Sistema de puntos (descuentos)
--Analiticas (visitantes de la pagina...)
--Notas de coach y usuario
