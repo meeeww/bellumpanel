@@ -21,9 +21,11 @@ const Layout = ({ children }) => {
     return <></>;
   }
 
+  let permisos = {admin: 3, coach: 2, viewer: 1, self: 0};
+
   const renderAdmin = () => {
     if (usuario) {
-      if (usuario.info.rol >= 20) {
+      if (usuario.info.permisos >= permisos.admin) {
         return (
           <div>
             <h3 className="mb-2 ml-4 text-sm font-[700] text-bodydark2">Liga</h3>
@@ -57,7 +59,7 @@ const Layout = ({ children }) => {
 
   const renderJugador = () => {
     if (usuario) {
-      if (usuario.info.rol >= 20) {
+      if (usuario.info.permisos >= permisos.admin) {
         return (
           <div>
             <h3 className="mb-2 ml-4 text-sm font-[700] text-bodydark2">Partidos</h3>
@@ -100,7 +102,7 @@ const Layout = ({ children }) => {
 
   const renderNotificaciones = () => {
     if (usuario) {
-      if (usuario.info.rol >= 20) {
+      if (usuario.info.permisos >= permisos.admin) {
         return (
           <div>
             <h3 className="mb-2 ml-4 text-sm font-[700] text-bodydark2">Administración</h3>
@@ -128,7 +130,7 @@ const Layout = ({ children }) => {
       return (
         <>
           <p className="font-[500] text-[var(--color-texto-header)] text-sm">{usuario.info.nick_usuario}</p>
-          <p className="text-[var(--color-texto-header)] text-xs">{getPerms(usuario.info.rol)}</p>
+          <p className="text-[var(--color-texto-header)] text-xs">{getPerms(usuario.info.permisos)}</p>
         </>
       );
     } else {

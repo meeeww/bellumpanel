@@ -193,34 +193,6 @@ export default function Perfil() {
                           <Divider className="my-2" />
                         </div>
                       );
-                    case "Equipo":
-                      if (usuario.equipo.length > 0) {
-                        return (
-                          <div key={columna.name}>
-                            <div className="flex justify-between items-center">
-                              <p>{columna.name}</p>
-                              <div className="flex justify-center items-center gap-4">
-                                <p className="font-[600] text-lg">{usuario.equipo.nombre_equipo}</p>
-                              </div>
-                            </div>
-                            <Divider className="my-2" />
-                          </div>
-                        );
-                      }
-                      break;
-                    case "Edad":
-                      return (
-                        <div key={columna.name}>
-                          <div className="flex justify-between items-center">
-                            <p>{columna.name}</p>
-                            <div className="flex justify-center items-center gap-4">
-                              <p className="font-[600] text-lg">{getEdad(usuario.info[columna.uid])}</p>
-                              <ModalPerfil jugador={usuario} columna={columna} setCambioDatos={setCambio} cambioDatos={cambio} />
-                            </div>
-                          </div>
-                          <Divider className="my-2" />
-                        </div>
-                      );
                     case "Nick":
                       return (
                         <div key={columna.name}>
