@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import InicioSesion from './pages/InicioSesion.jsx'
-import Registro from './pages/Registro.jsx'
 
 import Usuarios from "./pages/Usuarios.jsx"
 import Equipos from "./pages/Equipos.jsx"
@@ -36,10 +35,6 @@ const router = createBrowserRouter([
   {
     path: "/iniciosesion",
     element: <InicioSesion />,
-  },
-  {
-    path: "/registro",
-    element: <Registro />,
   },
   {
     path: "/usuarios",

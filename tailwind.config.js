@@ -14,23 +14,23 @@ export default {
         dark: {
           colors: {
             primary: {
-              DEFAULT: "#bb3dff",
+              DEFAULT: "#14506a",
             },
             danger: {
               DEFAULT: "#E40013",
             },
-            focus: "#cb6bff",
+            focus: "#00B3FF",
           },
         },
         light: {
           colors: {
             primary: {
-              DEFAULT: "#bb3dff",
+              DEFAULT: "#14506a",
             },
             danger: {
               DEFAULT: "#E40013",
             },
-            focus: "#cb6bff",
+            focus: "#00B3FF",
           },
         },
       },
