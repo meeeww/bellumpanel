@@ -44,63 +44,12 @@ export default function Perfil() {
             <CardBody className="py-2">
               <div className="flex mb-[3rem] justify-between items-center">
                 <h4 className="font-[800] text-4xl">Mi Perfil</h4>
-                <Skeleton className="w-3/5 rounded-lg">
-                  <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
-                </Skeleton>
-                {/* <h6 className="font-[300] text-bs pr-6">{usuario.info.nombre_usuario + " " + usuario.info.apellido_usuario}</h6> */}
               </div>
               <div className="overflow-y-auto no-scrollbar pr-4">
                 <div className="flex flex-col gap-2">
                   {columns.map((columna) => {
                     switch (columna.name) {
-                      case "Contraseña":
-                        return (
-                          <div key={columna.name}>
-                            <div className="flex justify-between items-center">
-                              <p>{columna.name}</p>
-                              <div className="flex justify-center items-center gap-4"></div>
-                            </div>
-                            <Divider className="my-2" />
-                          </div>
-                        );
-                      case "Rol":
-                        return (
-                          <div key={columna.name}>
-                            <div className="flex justify-between items-center">
-                              <p>{columna.name}</p>
-                              <div className="flex justify-center items-center gap-4">
-                                <Skeleton className="w-3/5 rounded-lg">
-                                  <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
-                                </Skeleton>
-                                {/* <p className="font-[600] text-lg">{getPerms(usuario.info[columna.uid])}</p> */}
-                              </div>
-                            </div>
-                            <Divider className="my-2" />
-                          </div>
-                        );
-                      case "Equipo":
-                        return (
-                          <Skeleton className="w-3/5 rounded-lg">
-                            <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
-                          </Skeleton>
-                        );
-                      case "Edad":
-                        return (
-                          <div key={columna.name}>
-                            <div className="flex justify-between items-center">
-                              <p>{columna.name}</p>
-                              <div className="flex justify-center items-center gap-4">
-                                <Skeleton className="w-3/5 rounded-lg">
-                                  <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
-                                </Skeleton>
-                                {/* <p className="font-[600] text-lg">{getEdad(usuario.info[columna.uid])}</p> */}
-                                {/* <ModalPerfil jugador={usuario} columna={columna} cambioDatos={setCargando} /> */}
-                              </div>
-                            </div>
-                            <Divider className="my-2" />
-                          </div>
-                        );
-                      case "Nick":
+                      case "Nombre":
                         return (
                           <div key={columna.name}>
                             <div className="flex justify-between items-center">
@@ -115,6 +64,32 @@ export default function Perfil() {
                             <Divider className="my-2" />
                           </div>
                         );
+                      case "Contraseña":
+                        return (
+                          <div key={columna.name}>
+                            <div className="flex justify-between items-center">
+                              <p>{columna.name}</p>
+                              <div className="flex justify-center items-center gap-4"></div>
+                            </div>
+                            <Divider className="my-2" />
+                          </div>
+                        );
+                      case "Permisos":
+                        return (
+                          <div key={columna.name}>
+                            <div className="flex justify-between items-center">
+                              <p>{columna.name}</p>
+                              <div className="flex justify-center items-center gap-4">
+                                <Skeleton className="w-3/5 rounded-lg">
+                                  <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
+                                </Skeleton>
+                                {/* <p className="font-[600] text-lg">{getPerms(usuario.info[columna.uid])}</p> */}
+                              </div>
+                            </div>
+                            <Divider className="my-2" />
+                          </div>
+                        );
+
                       default:
                         return (
                           <div key={columna.name}>
@@ -162,12 +137,24 @@ export default function Perfil() {
           <CardBody className="py-2">
             <div className="flex mb-[3rem] justify-between items-center">
               <h4 className="font-[800] text-4xl">Mi Perfil</h4>
-              <h6 className="font-[300] text-bs pr-6">{usuario.info.nombre_usuario + " " + usuario.info.apellido_usuario}</h6>
             </div>
             <div className="overflow-y-auto no-scrollbar pr-4">
               <div className="flex flex-col gap-2">
                 {columns.map((columna) => {
                   switch (columna.name) {
+                    case "Nombre":
+                      return (
+                        <div key={columna.name}>
+                          <div className="flex justify-between items-center">
+                            <p>{columna.name}</p>
+                            <div className="flex justify-center items-center gap-4">
+                              <p className="font-[600] text-lg">{usuario.info[columna.uid]}</p>
+                              <ModalPerfil jugador={usuario} columna={columna} setCambioDatos={setCambio} cambioDatos={cambio} />
+                            </div>
+                          </div>
+                          <Divider className="my-2" />
+                        </div>
+                      );
                     case "Contraseña":
                       return (
                         <div key={columna.name}>
@@ -188,18 +175,6 @@ export default function Perfil() {
                             <p>{columna.name}</p>
                             <div className="flex justify-center items-center gap-4">
                               <p className="font-[600] text-lg">{getPerms(usuario.info[columna.uid])}</p>
-                            </div>
-                          </div>
-                          <Divider className="my-2" />
-                        </div>
-                      );
-                    case "Nick":
-                      return (
-                        <div key={columna.name}>
-                          <div className="flex justify-between items-center">
-                            <p>{columna.name}</p>
-                            <div className="flex justify-center items-center gap-4">
-                              <p className="font-[600] text-lg">{usuario.info[columna.uid]}</p>
                             </div>
                           </div>
                           <Divider className="my-2" />

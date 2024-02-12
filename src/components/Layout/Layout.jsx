@@ -129,7 +129,7 @@ const Layout = ({ children }) => {
     if (usuario) {
       return (
         <>
-          <p className="font-[500] text-[var(--color-texto-header)] text-sm">{usuario.info.nick_usuario}</p>
+          <p className="font-[500] text-[var(--color-texto-header)] text-sm">{usuario.info.nombre}</p>
           <p className="text-[var(--color-texto-header)] text-xs">{getPerms(usuario.info.permisos)}</p>
         </>
       );
@@ -155,7 +155,7 @@ const Layout = ({ children }) => {
 
   const renderNick = () => {
     if (usuario) {
-      return <p className="font-semibold">{usuario.info.nick_usuario}</p>;
+      return <p className="font-semibold">{usuario.info.nombre}</p>;
     } else {
       return <Skeleton className="flex rounded-full" />;
     }
